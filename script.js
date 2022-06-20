@@ -18,51 +18,6 @@ function displayClock() {
 
 function main() {
 
-    // --- HEADING --- //
-
-    headingContainer = document.querySelector("#headingContainer");
-    headingContentSetting = document.querySelector("#headingContentSetting");
-    headingColorSetting = document.querySelector("#headingColorSetting");
-    headingFontSetting = document.querySelector("#headingFontSetting");
-    headingFontSizeSetting = document.querySelector("#headingFontSizeSetting");
-
-    // load User Prefs
-    if (localStorage.getItem("headingContent" != null)) {
-        headingContainer.innerHTML = headingContentSetting.value = localStorage.getItem("headingContent");
-    }
-    if (localStorage.getItem("headingColor") != null) {
-        headingContainer.style.color = headingColorSetting.value = localStorage.getItem("headingColor");
-    }
-    if (localStorage.getItem("headingFont") != null) {
-        headingContainer.style.fontFamily = headingFontSetting.value = localStorage.getItem("headingFont");
-    }
-    if (localStorage.getItem("headingFontSize") != null) {
-        headingContainer.style.fontSize = localStorage.getItem("headingFontSize") + 'vw';
-        headingFontSizeSetting.value = localStorage.getItem("headingFontSize");
-    }
-
-    // make settings work
-    headingContentSetting.oninput = function() {
-        newValue = headingContentSetting.value;
-        headingContainer.innerHTML = newValue;
-        localStorage.setItem("headingContent", newValue);
-    }
-    headingColorSetting.oninput = function() {
-        newValue = headingColorSetting.value;
-        headingContainer.style.color = newValue;
-        localStorage.setItem("headingColor", newValue);
-    }
-    headingFontSetting.oninput = function() {
-        newValue = headingFontSetting.value;
-        headingContainer.style.fontFamily = newValue;
-        localStorage.setItem("headingFont", newValue);
-    }
-    headingFontSizeSetting.oninput = function() {
-        newValue = headingFontSizeSetting.value;
-        headingContainer.style.fontSize = newValue + 'vw';
-        localStorage.setItem("headingFontSize", newValue);
-    }
-
     // --- CLOCK --- //
 
     clockContainer = document.querySelector("#clockContainer");
@@ -85,28 +40,6 @@ function main() {
     if (localStorage.getItem("clockLineHeight") != null) {
         clockContainer.style.lineHeight = localStorage.getItem("clockLineHeight") + 'vw';
         clockLineHeightSetting.value = localStorage.getItem("clockLineHeight");
-    }
-
-    // make settings work
-    clockColorSetting.oninput = function() {
-        newValue = clockColorSetting.value;
-        clockContainer.style.color = newValue;
-        localStorage.setItem("clockColor", newValue);
-    }
-    clockFontSetting.oninput = function() {
-        newValue = clockFontSetting.value;
-        clockContainer.style.fontFamily = newValue;
-        localStorage.setItem("clockFont", newValue);
-    }
-    clockFontSizeSetting.oninput = function() {
-        newValue = clockFontSizeSetting.value;
-        clockContainer.style.fontSize = newValue + 'vw';
-        localStorage.setItem("clockFontSize", newValue);
-    }
-    clockLineHeightSetting.oninput = function() {
-        newValue = clockLineHeightSetting.value;
-        clockContainer.style.lineHeight = newValue + 'vw';
-        localStorage.setItem("clockLineHeight", newValue);
     }
 
     // display correct time and update it every 1000ms
@@ -222,62 +155,6 @@ function main() {
     if (localStorage.getItem("generalBlurIntensity") != null) {
         apexContainer.style.backdropFilter = "blur(" + localStorage.getItem("generalBlurIntensity") + "px)";
         generalBlurIntensitySetting.value = localStorage.getItem("generalBlurIntensity");
-    }
-
-    // make settings work
-    generalBackgroundSetting.oninput = function() {
-        newValue = generalBackgroundSetting.value;
-        body.style.backgroundImage = "url('" + newValue + "')";
-        localStorage.setItem("generalBackground", newValue);
-    }
-    generalBlurIntensitySetting.oninput = function() {
-        newValue = generalBlurIntensitySetting.value;
-        apexContainer.style.backdropFilter = "blur("+ newValue +"px)";
-        localStorage.setItem("generalBlurIntensity", newValue);
-    }
-
-    // --- SETTINGS --- //
-
-    settingsIcon = document.querySelector("#b5");
-    settingsContainer = document.querySelector("#settingsContainer");
-    headingSettingsContainer = document.querySelector("#headingSettingsContainer");
-    clockSettingsContainer = document.querySelector("#clockSettingsContainer");
-    bookmarkSettingsContainer = document.querySelector("#bookmarkSettingsContainer");
-    generalSettingsContainer = document.querySelector("#generalSettingsContainer");
-
-    // make settings icon display settings when clicked
-    settingsIcon.onclick = function(){
-        if (settingsContainer.style.display == 'none') {
-            settingsContainer.style.display = 'grid';
-        } else {
-            settingsContainer.style.display = 'none';
-        }
-    }
-
-    // make settings category container work
-    document.querySelector("#headingSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'grid';
-        clockSettingsContainer.style.display = 'none';
-        bookmarkSettingsContainer.style.display = 'none';
-        generalSettingsContainer.style.display = 'none';
-    }
-    document.querySelector("#clockSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'none';
-        clockSettingsContainer.style.display = 'grid';
-        bookmarkSettingsContainer.style.display = 'none';
-        generalSettingsContainer.style.display = 'none';
-    }
-    document.querySelector("#bookmarkSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'none';
-        clockSettingsContainer.style.display = 'none';
-        bookmarkSettingsContainer.style.display = 'grid';
-        generalSettingsContainer.style.display = 'none';
-    }
-    document.querySelector("#generalSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'none';
-        clockSettingsContainer.style.display = 'none';
-        bookmarkSettingsContainer.style.display = 'none';
-        generalSettingsContainer.style.display = 'grid';
     }
 }
 
