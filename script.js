@@ -42,26 +42,26 @@ function main() {
     }
 
     // make settings work
-    headingContentSetting.oninput = function() {
+    //headingContentSetting.oninput = function() {
         newValue = headingContentSetting.value;
         headingContainer.innerHTML = newValue;
         localStorage.setItem("headingContent", newValue);
-    }
-    headingColorSetting.oninput = function() {
+    //}
+    //headingColorSetting.oninput = function() {
         newValue = headingColorSetting.value;
         headingContainer.style.color = newValue;
         localStorage.setItem("headingColor", newValue);
-    }
-    headingFontSetting.oninput = function() {
+    //}
+    //headingFontSetting.oninput = function() {
         newValue = headingFontSetting.value;
         headingContainer.style.fontFamily = newValue;
         localStorage.setItem("headingFont", newValue);
-    }
-    headingFontSizeSetting.oninput = function() {
+    //}
+    //headingFontSizeSetting.oninput = function() {
         newValue = headingFontSizeSetting.value;
         headingContainer.style.fontSize = newValue + 'vw';
         localStorage.setItem("headingFontSize", newValue);
-    }
+    //}
 
     // --- CLOCK --- //
 
@@ -136,6 +136,11 @@ function main() {
     aB4Setting = document.querySelector("#aB4Setting");
     imgB4Setting = document.querySelector("#imgB4Setting");
 
+    aB5 = document.querySelector("#aB5");
+    imgB4 = document.querySelector("#imgB5");
+    aB4Setting = document.querySelector("#aB5Setting");
+    imgB4Setting = document.querySelector("#imgB5Setting");
+
     // load user prefs
     if (localStorage.getItem("aB1") != null) {
         aB1.href = aB1Setting.value = localStorage.getItem("aB1");
@@ -149,6 +154,9 @@ function main() {
     if (localStorage.getItem("aB4") != null) {
         aB4.href = aB4Setting.value = localStorage.getItem("aB4");
     }
+    if (localStorage.getItem("aB5") != null) {
+        aB4.href = aB4Setting.value = localStorage.getItem("aB5");
+    }
     if (localStorage.getItem("imgB1") != null) {
         imgB1.src = imgB1Setting.value = localStorage.getItem("imgB1");
     }
@@ -160,6 +168,9 @@ function main() {
     }
     if (localStorage.getItem("imgB4") != null) {
         imgB4.src = imgB4Setting.value = localStorage.getItem("imgB4");
+    }
+    if (localStorage.getItem("imgB5") != null) {
+        imgB4.src = imgB4Setting.value = localStorage.getItem("imgB5");
     }
 
     // make settings work
@@ -183,6 +194,11 @@ function main() {
         aB4.href = newValue;
         localStorage.setItem("aB4", newValue);        
     }
+    aB5Setting.oninput = function() {
+        newValue = aB4Setting.value;
+        aB5.href = newValue;
+        localStorage.setItem("aB5", newValue);        
+    }
     imgB1Setting.oninput = function() {
         newValue = imgB1Setting.value;
         imgB1.src = newValue;
@@ -202,6 +218,11 @@ function main() {
         newValue = imgB4Setting.value;
         imgB4.src = newValue;
         localStorage.setItem("imgB4", newValue);
+    }
+    imgB5Setting.oninput = function() {
+        newValue = imgB5Setting.value;
+        imgB4.src = newValue;
+        localStorage.setItem("imgB5", newValue);
     }
 
     // --- GENERAL --- //
@@ -238,48 +259,48 @@ function main() {
 
     // --- SETTINGS --- //
 
-    settingsIcon = document.querySelector("#b5");
-    settingsContainer = document.querySelector("#settingsContainer");
-    headingSettingsContainer = document.querySelector("#headingSettingsContainer");
-    clockSettingsContainer = document.querySelector("#clockSettingsContainer");
-    bookmarkSettingsContainer = document.querySelector("#bookmarkSettingsContainer");
-    generalSettingsContainer = document.querySelector("#generalSettingsContainer");
+   // settingsIcon = document.querySelector("#b5");
+    //settingsContainer = document.querySelector("#settingsContainer");
+    //headingSettingsContainer = document.querySelector("#headingSettingsContainer");
+    //clockSettingsContainer = document.querySelector("#clockSettingsContainer");
+    //bookmarkSettingsContainer = document.querySelector("#bookmarkSettingsContainer");
+    //generalSettingsContainer = document.querySelector("#generalSettingsContainer");
 
     // make settings icon display settings when clicked
-    settingsIcon.onclick = function(){
-        if (settingsContainer.style.display == 'none') {
-            settingsContainer.style.display = 'grid';
-        } else {
-            settingsContainer.style.display = 'none';
-        }
-    }
+    //settingsIcon.onclick = function(){
+    //    if (settingsContainer.style.display == 'none') {
+    //        settingsContainer.style.display = 'grid';
+    //    } else {
+    //       settingsContainer.style.display = 'none';
+    //    }
+    //}
 
     // make settings category container work
-    document.querySelector("#headingSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'grid';
-        clockSettingsContainer.style.display = 'none';
-        bookmarkSettingsContainer.style.display = 'none';
-        generalSettingsContainer.style.display = 'none';
-    }
-    document.querySelector("#clockSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'none';
-        clockSettingsContainer.style.display = 'grid';
-        bookmarkSettingsContainer.style.display = 'none';
-        generalSettingsContainer.style.display = 'none';
-    }
-    document.querySelector("#bookmarkSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'none';
-        clockSettingsContainer.style.display = 'none';
-        bookmarkSettingsContainer.style.display = 'grid';
-        generalSettingsContainer.style.display = 'none';
-    }
-    document.querySelector("#generalSettingCategory").onclick = function() {
-        headingSettingsContainer.style.display = 'none';
-        clockSettingsContainer.style.display = 'none';
-        bookmarkSettingsContainer.style.display = 'none';
-        generalSettingsContainer.style.display = 'grid';
-    }
-}
+    //document.querySelector("#headingSettingCategory").onclick = function() {
+    //    headingSettingsContainer.style.display = 'grid';
+    //    clockSettingsContainer.style.display = 'none';
+    //    bookmarkSettingsContainer.style.display = 'none';
+    //    generalSettingsContainer.style.display = 'none';
+    //}
+    //document.querySelector("#clockSettingCategory").onclick = function() {
+    //    headingSettingsContainer.style.display = 'none';
+    //    clockSettingsContainer.style.display = 'grid';
+    //    bookmarkSettingsContainer.style.display = 'none';
+    //    generalSettingsContainer.style.display = 'none';
+    //}
+    //document.querySelector("#bookmarkSettingCategory").onclick = function() {
+    //    headingSettingsContainer.style.display = 'none';
+    //    clockSettingsContainer.style.display = 'none';
+    //    bookmarkSettingsContainer.style.display = 'grid';
+    //    generalSettingsContainer.style.display = 'none';
+    //}
+    //document.querySelector("#generalSettingCategory").onclick = function() {
+    //    headingSettingsContainer.style.display = 'none';
+    //    clockSettingsContainer.style.display = 'none';
+    //    bookmarkSettingsContainer.style.display = 'none';
+    //    generalSettingsContainer.style.display = 'grid';
+    //}
+//}
 
 // run main after window loads
 window.onload = main;
