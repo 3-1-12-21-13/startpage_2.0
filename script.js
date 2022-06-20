@@ -260,11 +260,11 @@ function main() {
     // --- SETTINGS --- //
 
    // settingsIcon = document.querySelector("#b5");
-    //settingsContainer = document.querySelector("#settingsContainer");
-    //headingSettingsContainer = document.querySelector("#headingSettingsContainer");
-    //clockSettingsContainer = document.querySelector("#clockSettingsContainer");
-    //bookmarkSettingsContainer = document.querySelector("#bookmarkSettingsContainer");
-    //generalSettingsContainer = document.querySelector("#generalSettingsContainer");
+    settingsContainer = document.querySelector("#settingsContainer");
+    headingSettingsContainer = document.querySelector("#headingSettingsContainer");
+    clockSettingsContainer = document.querySelector("#clockSettingsContainer");
+    bookmarkSettingsContainer = document.querySelector("#bookmarkSettingsContainer");
+    generalSettingsContainer = document.querySelector("#generalSettingsContainer");
 
     // make settings icon display settings when clicked
     //settingsIcon.onclick = function(){
